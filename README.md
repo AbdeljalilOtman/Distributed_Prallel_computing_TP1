@@ -95,33 +95,9 @@ gcc -O2 -o hpl_bench exercise5_hpl_benchmark.c && ./hpl_bench
 
 ---
 
-## 💡 Key Concepts
 
-### 1. Cache Lines
-- CPU loads 64 bytes at a time
-- Sequential access: use all 64 bytes
-- Random access: waste 56 bytes per load
 
-### 2. Row-Major Order
-```c
-// In C, a[i][j] is stored as: a[0][0], a[0][1], ..., a[1][0], a[1][1], ...
-// Access row-wise (varying j) is fast
-// Access column-wise (varying i) is slow
-```
-
-### 3. Blocking
-- Divide matrices into B×B blocks
-- Process blocks to maximize cache reuse
-- Optimal B: fits 3 blocks in L1 cache
-
-### 4. Performance Metrics
-- **Bandwidth (MB/s)**: Data transferred per second
-- **GFLOPS**: Billions of floating-point operations per second
-- **Efficiency**: Actual / Theoretical peak × 100%
-
----
-
-## 📈 Analysis Notebook
+##  Analysis Notebook
 
 Open `TP1_Analysis.ipynb` in Jupyter or VS Code to:
 1. Visualize results with interactive plots
@@ -173,3 +149,4 @@ The i-k-j loop order accesses matrix B row-wise instead of column-wise. In C's r
 ## 👨‍🏫 Author
 Student - Abdeljalil Otman 
 Date: January 2026
+
